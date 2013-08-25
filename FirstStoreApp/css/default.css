@@ -1,6 +1,23 @@
 ﻿body {
 }
 
+#twocolumn {
+    display:-ms-flexbox;
+    width:100%;
+    height:100%;
+    overflow-x:auto;
+    -ms-scroll-snap-x:mandatory snapInterval(0%,80%);
+}
+    #twocolumn > section {
+        margin-bottom:16px; 
+        padding:5px; 
+        border:groove;
+        width:80%;
+    }
+        #twocolumn > section > *{
+            width:100%;
+        }
+
 @media screen and (-ms-view-state: fullscreen-landscape) {
 }
 
@@ -12,3 +29,75 @@
 
 @media screen and (-ms-view-state: fullscreen-portrait) {
 }
+
+#wordgrid {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+    height: 200px;
+    width: 200px;
+}
+
+    #wordgrid > div {
+        -ms-grid-column-align: center;
+        -ms-grid-row-align: center;
+    }
+
+        #wordgrid > div > p {
+            transition: all 2s;
+        }
+
+            #wordgrid > div > p:hover {
+                transform-origin: left;
+                transform: scale(2) rotate(10deg);
+                color: red;
+            }
+
+        #wordgrid > div:nth-of-type(1) {
+            -ms-grid-column: 1;
+            -ms-grid-row: 1;
+        }
+
+        #wordgrid > div:nth-of-type(2) {
+            -ms-grid-column: 2;
+            -ms-grid-row: 1;
+        }
+
+        #wordgrid > div:nth-of-type(3) {
+            -ms-grid-column: 1;
+            -ms-grid-row: 2;
+        }
+
+        #wordgrid > div:nth-of-type(4) {
+            -ms-grid-column: 2;
+            -ms-grid-row: 2;
+        }
+
+#colorboxes {
+    display: -ms-flexbox;
+    width:100%;
+    -ms-flex-pack:start;
+    -ms-flex-flow:column;
+}
+    #colorboxes > div {
+        box-sizing:border-box;
+        min-width: 40px;
+        min-height: 40px;
+        background-color:blue;
+        margin:5px;
+    }
+        #colorboxes > div:nth-of-type(2) {
+            -ms-flex:1 auto;
+            background-color:green;
+            -ms-flex-order:1;           
+        }
+            #colorboxes > div:nth-of-type(2) > * {
+                -ms-flex:2 auto;
+                color:aquamarine;
+                text-align:center;
+            }
+
+        #colorboxes > div:nth-of-type(3) {
+            -ms-flex:2 auto;
+            background-color:red;
+        }
